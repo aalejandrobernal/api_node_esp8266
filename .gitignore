@@ -1,0 +1,32 @@
+# Dependencias de Node.js
+/node_modules/
+
+# Archivos de configuración del entorno
+.env
+.env.*
+
+# Archivos de compilación
+/dist
+/build
+
+# Archivos de log
+*.log
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Archivos de configuración de IDEs
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Archivos de prueba
+coverage/
+
+# Dependencias y archivos generados por el gestor de paquetes
+package-lock.json
+yarn.lock
