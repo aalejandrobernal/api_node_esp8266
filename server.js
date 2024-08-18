@@ -10,8 +10,10 @@ app.use(bodyParser.json());
 // Importar y usar las rutas
 const authRoutes = require('./routes/auth');
 const postRoutes = require('./routes/post');
+const dataRoutes = require('./routes/data');
 app.use('/api/auth', authRoutes);
 app.use('/api/posts', postRoutes);
+app.use('/api/data', dataRoutes);
 
 // Sincronizar con la base de datos
 sequelize.sync()

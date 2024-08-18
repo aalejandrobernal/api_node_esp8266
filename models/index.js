@@ -8,12 +8,12 @@ const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, proces
 });
 
 const db = {};
-db.Sequelize = Sequelize;
-db.sequelize = sequelize;
+
 
 // Importar los modelos aquí
 db.User = require('./user')(sequelize, Sequelize);
 db.Post = require('./post')(sequelize, Sequelize);
+db.Data = require('./data')(sequelize, Sequelize.DataTypes);
 
 // Asociaciones
 Object.keys(db).forEach((modelName) => {
@@ -21,5 +21,6 @@ Object.keys(db).forEach((modelName) => {
       db[modelName].associate(db);
     }
   });
-
+  db.Sequelize = Sequelize;
+  db.sequelize = sequelize;
 module.exports = db;
