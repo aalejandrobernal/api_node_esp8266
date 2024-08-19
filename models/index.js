@@ -1,12 +1,9 @@
 // models/index.js
-require('dotenv').config();
 const { Sequelize } = require('sequelize');
+const config = require('../config/config.js');
+const env = process.env.NODE_ENV || 'development'
+const sequelize = new Sequelize(config[env]);
 
-const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASSWORD, {
-  host: process.env.DB_HOST,
-  port: process.env.DB_PORT,
-  dialect: 'mysql'
-});
 
 const db = {};
 
