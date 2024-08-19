@@ -16,7 +16,7 @@ app.use('/api/posts', postRoutes);
 app.use('/api/data', dataRoutes);
 
 // Sincronizar con la base de datos
-sequelize.sync()
+sequelize.sync({force:true})
 .then(() => {
   console.log('Database connected');
   app.listen(process.env.PORT, () => {
